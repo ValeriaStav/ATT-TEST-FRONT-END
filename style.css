@@ -99,11 +99,18 @@ h2 {
     }
 }
 
+/* Main */
+
+main {
+    height: calc(100vh - 100px);
+    display: flex;
+    flex-direction: row;
+}
+
 /* Sidebar */
 
 .sidebar {
     width: 250px;
-    height: calc(100vh - 100px);
     display: flex;
     background-color: var(--background-color);
 
@@ -147,4 +154,53 @@ h2 {
         background-color: var(--text-active-color);
         border-radius: 0 10px 10px 0;
     }
+}
+
+/* Profile */
+
+.profile-card {
+    max-width: 1110px;
+    width: 100%;
+    margin-top: 30px;
+    margin-left: 40px;
+    border-radius: 25px;
+    background-color: var(--background-color);
+}
+
+.nav-menu {
+    width: 100%;
+    margin: 35px 43px;
+    display: flex;
+    list-style: none;
+    gap: 75px;
+}
+
+.nav-link {
+    position: relative;
+
+    a {
+        font-size: 16px;
+        font-weight: 500;
+        color: var(--secondary-color);
+        text-decoration: none;
+    }
+
+    &.active a {
+        color: var(--text-active-color);
+    }
+
+    &.active:before {
+        content: "";
+        position: absolute;
+        width: 114px;
+        height: 3px;
+        top: 27px;
+        left: -15px;
+        background-color: var(--text-active-color);
+        border-radius: 10px 10px 0 0;
+    }
+}
+
+.profile-container {
+    padding: 30px;
 }
