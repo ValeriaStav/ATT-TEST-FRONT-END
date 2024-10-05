@@ -25,6 +25,10 @@ body {
     background-color: var(--body-color);
 }
 
+input::placeholder {
+    color: var(--secondary-color);
+}
+
 /* Header */
 
 header {
@@ -37,7 +41,7 @@ header {
 }
 
 .logo {
-    margin-left: 2px;
+    margin-left: 5px;
 }
 
 .header-container {
@@ -69,10 +73,6 @@ h2 {
     position: relative;
     font-size: 15px;
     text-indent: 30px;
-
-    &::placeholder {
-        color: var(--secondary-color);
-    }
 }
 
 .search-icon {
@@ -102,7 +102,7 @@ h2 {
 /* Main */
 
 main {
-    height: calc(100vh - 100px);
+    height: 100vh;
     display: flex;
     flex-direction: row;
 }
@@ -111,13 +111,14 @@ main {
 
 .sidebar {
     width: 250px;
+    min-height: 924px;
     display: flex;
     background-color: var(--background-color);
 
 }
 
 .menu {
-    margin-top: 33px;
+    margin-top: 30px;
     list-style: none;
     display: flex;
     flex-direction: column;
@@ -161,6 +162,7 @@ main {
 .profile-card {
     max-width: 1110px;
     width: 100%;
+    min-height: 717px;
     margin-top: 30px;
     margin-left: 40px;
     border-radius: 25px;
@@ -169,7 +171,7 @@ main {
 
 .nav-menu {
     width: 100%;
-    margin: 35px 43px;
+    margin: 35px 45px;
     display: flex;
     list-style: none;
     gap: 75px;
@@ -194,7 +196,7 @@ main {
         position: absolute;
         width: 114px;
         height: 3px;
-        top: 27px;
+        top: 30px;
         left: -15px;
         background-color: var(--text-active-color);
         border-radius: 10px 10px 0 0;
@@ -203,4 +205,68 @@ main {
 
 .profile-container {
     padding: 30px;
+    display: flex;
+    gap: 53px;
+    align-items: flex-start;
+}
+
+/* Form */
+
+fieldset {
+    border: none;
+}
+
+.form-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 27px 25px;
+    margin-bottom: 27px;
+}
+
+.form-group {
+    flex: 1 2 45%;
+    display: flex;
+    flex-direction: column;
+}
+
+.date-select {
+    position: relative;
+    display: inline-block;
+}
+
+label {
+    font-size: 16px;
+}
+
+input {
+    outline: none;
+    width: 100%;
+    margin-top: 8px;
+    padding: 13px 20px;
+    border: 1px solid #ccc;
+    border-radius: 15px;
+    font-size: 15px;
+}
+
+.arrow {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    width: 12px;
+    height: 6px;
+    background-image: url('./assets/icons/arrow.svg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    transform: translateY(-50%);
+}
+
+input[type="submit"] {
+    min-width: 190px;
+    width: 20%;
+    display: block;
+    margin-left: auto;
+    background-color: var(--text-active-color);
+    color: var(--background-color);
+    font-size: 18px;
+    cursor: pointer;
 }
